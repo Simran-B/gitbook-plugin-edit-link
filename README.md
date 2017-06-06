@@ -65,6 +65,22 @@ Link target will be that page's source file on Github or Gitlab or any repo.
 }
 ```
 
+#### Sample `book.json` file that specifies .mdpp as file extension in the repository
+
+```
+{
+    "gitbook": "1.5.0",
+    "plugins": ["edit-link@1.1.0"],
+    "pluginsConfig": {
+            "edit-link": {
+                "base": "https://github.com/USER/REPO/edit/BRANCH/path/to/book",
+                "label": "Edit This Page",
+                "extension": ".mdpp"
+            }
+    }
+}
+```
+
 **Note**: Above snippet can be used as complete `book.json` file, if your book doesn't have one yet.
 
 **Github/Gitlab**: In string `...REPO/edit/BRANCH...`, you may replace `edit` with `tree` if you want source file to open in read-mode, rather than edit-mode directly on github/gitlab.
@@ -96,6 +112,10 @@ This plugin simply looks for HTML comment `<!-- Actions Right -->` in parsed pag
 This means if that HTML comment changes, this plugin will break but I hope to fix it easily whenever that happen.
 
 ## Changelog
+
+**2.1 - 06 June 2017**
+
+- Option to specify a deviating file extension added by [@simran-b](https://github.com/Simran-B/gitbook-plugin-edit-link)
 
 **1.3 - 28 April 2015**
 
